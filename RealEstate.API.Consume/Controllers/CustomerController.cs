@@ -17,7 +17,7 @@ namespace RealEstate.API.Consume.Controllers
         public async Task<IActionResult> Index()
         {
             var client = _httpClientFactory.CreateClient();
-            var responseMessage = await client.GetAsync("https://localhost:44367/api/Customer");
+            var responseMessage = await client.GetAsync("https://localhost:7055/api/Customer");
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
@@ -36,7 +36,7 @@ namespace RealEstate.API.Consume.Controllers
             var client = _httpClientFactory.CreateClient();
             var jsonData = JsonConvert.SerializeObject(createCustomerDto);
             StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
-            var responseMessage = await client.PostAsync("https://localhost:44367/api/Customer", stringContent);
+            var responseMessage = await client.PostAsync("https://localhost:7055/api/Customer", stringContent);
             if (responseMessage.IsSuccessStatusCode)
             {
                 return RedirectToAction("Index");
@@ -46,7 +46,7 @@ namespace RealEstate.API.Consume.Controllers
         public async Task<IActionResult> DeleteCustomer(int id)
         {
             var client = _httpClientFactory.CreateClient();
-            var responseMessage = await client.DeleteAsync($"https://localhost:44367/api/Customer/{id}");
+            var responseMessage = await client.DeleteAsync($"https://localhost:7055/api/Customer/{id}");
             if (responseMessage.IsSuccessStatusCode)
             {
                 return RedirectToAction("Index");
@@ -57,7 +57,7 @@ namespace RealEstate.API.Consume.Controllers
         public async Task<IActionResult> UpdateCustomer(int id)
         {
             var client = _httpClientFactory.CreateClient();
-            var responseMessage = await client.GetAsync($"https://localhost:44367/api/Customer/{id}");
+            var responseMessage = await client.GetAsync($"https://localhost:7055/api/Customer/{id}");
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
@@ -72,7 +72,7 @@ namespace RealEstate.API.Consume.Controllers
             var client = _httpClientFactory.CreateClient();
             var jsonData = JsonConvert.SerializeObject(updateCustomerDto);
             StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
-            var responseMessage = await client.PutAsync("https://localhost:44367/api/Customer", stringContent);
+            var responseMessage = await client.PutAsync("https://localhost:7055/api/Customer", stringContent);
             if (responseMessage.IsSuccessStatusCode)
             {
                 return RedirectToAction("Index");
