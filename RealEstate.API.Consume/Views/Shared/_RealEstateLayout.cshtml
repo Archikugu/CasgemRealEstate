@@ -1,0 +1,28 @@
+﻿@{
+    Layout = null;
+}
+
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+-->
+<!doctype html>
+<html lang="en">
+@await Html.PartialAsync("/Views/_RealEstatePartial/_HeadPartial.cshtml")
+
+<body>
+
+    <!--header-->
+    @await Html.PartialAsync("/Views/_RealEstatePartial/_NavbarPartial.cshtml")
+    <!--/header-->
+  
+    @RenderBody()
+    <!-- footers 20 -->
+    @await Html.PartialAsync("/Views/_RealEstatePartial/_FooterPartial.cshtml")
+
+    <!--Script-->
+    @await Html.PartialAsync("/Views/_RealEstatePartial/_ScriptPartial.cshtml")
+
+</body>
+
+</html>

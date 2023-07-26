@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_RealEstateLayout.cshtml";
+}
+
+@await Component.InvokeAsync("_PropertySearchPartial")
+
+@await Component.InvokeAsync("_TopPropertiesPartial")
+
+@await Component.InvokeAsync("_WhoWeArePartial")
+
+<!-- /bottom-grids-->
+@await Component.InvokeAsync("_FeaturePartial")
+<!-- //bottom-grids-->
+@await Component.InvokeAsync("_ExploreCitiesPartial")
+
+@await Component.InvokeAsync("_TestimonialsPartial")
+
+<!-- /bottom-grids-->
+@await Component.InvokeAsync("_Feature2Partial")
+<!-- //bottom-grids-->
+<!--  News section -->
+@await Component.InvokeAsync("_TipsAndAdvicesPartial")
+<!--  //News section -->
+@await Component.InvokeAsync("_CompanyPartial")
